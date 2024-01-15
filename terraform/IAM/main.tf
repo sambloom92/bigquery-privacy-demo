@@ -8,7 +8,7 @@ resource "google_project_iam_binding" "demo_user" {
   role    = each.key
 
   members = [
-    "user:demo-user@sambloom.me",
+    "user:${var.demo_user_email}",
   ]
 }
 
@@ -21,6 +21,6 @@ resource "google_project_iam_binding" "admin_user" {
   role    = each.key
 
   members = [
-    "user:admin@sambloom.me",
+    "user:${var.admin_email}",
   ]
 }
