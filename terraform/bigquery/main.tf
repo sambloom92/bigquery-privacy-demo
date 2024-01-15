@@ -11,6 +11,6 @@ resource "google_bigquery_dataset" "data_warehouse" {
 
   access {
     role          = "OWNER"
-    user_by_email = var.user_email
+    user_by_email = var.admin_email
   }
 }

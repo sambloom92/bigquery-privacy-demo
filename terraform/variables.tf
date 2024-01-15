@@ -4,10 +4,16 @@ variable "project" {
   default = "bigquery-privacy-demo"
 }
 
-variable "user_email" {
-  description = "main user's email address"
+variable "admin_email" {
+  description = "admin email address"
   type = string
   default = "admin@sambloom.me"
+}
+
+variable "demo_user_email" {
+  description = "demo user email address"
+  type = string
+  default = "demo-user@sambloom.me"
 }
 
 variable "region" {

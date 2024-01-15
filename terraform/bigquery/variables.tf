@@ -3,8 +3,8 @@ variable "project" {
   type = string
 }
 
-variable "user_email" {
-  description = "main user's email address"
+variable "admin_email" {
+  description = "admin email address"
   type = string
 }
 

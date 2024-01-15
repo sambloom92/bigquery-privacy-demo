@@ -7,7 +7,7 @@ module "bigquery" {
     source = "./bigquery"
 
     project = var.project
-    user_email = var.user_email
+    admin_email = var.admin_email
     region = var.region
 }
 
@@ -21,5 +21,7 @@ module "data_policies" {
 module "iam" {
     source = "./IAM"
 
+    admin_email = var.admin_email
+    demo_user_email = var.demo_user_email
     project = var.project
 }
