@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: data_warehouse
+    tables:
+      - name: row_sequence
+        description: used to seed randomly generated data
+        columns:
+          - name: row_num
+            description: a unique row number used to seed randomly generated data
+            tests:
+              - not_null
+              - unique

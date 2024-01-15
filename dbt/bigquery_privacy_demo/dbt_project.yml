@@ -1,0 +1,27 @@
+name: 'bigquery_privacy_demo'
+version: '1.0.0'
+config-version: 2
+
+profile: 'bigquery_privacy_demo'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+  max_rows: 50
+
+models:
+  bigquery_privacy_demo:
+    data_warehouse:
+      materialized: table
+      +persist_docs:
+          columns: true
+          relation: true

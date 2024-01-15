@@ -1,0 +1,226 @@
+version: 2
+
+models:
+  - name: fake_employee
+    description: fake randomly generated employee data
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: id
+        description: employee identifier
+        data_type: string
+        constraints:
+          - type: not_null
+          - type: primary_key
+      - name: firstname
+        description: fist name
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: surname
+        description: surname
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: home_postcode
+        description: home address postcode
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: primary_phone_number
+        description: the employee's primary phone number 
+        data_type: string
+      - name: date_of_birth
+        description: date of birth
+        data_type: date
+        constraints:
+          - type: not_null
+      - name: notes
+        description: a free text field containing notes about the employee
+        data_type: string
+      - name: bank_account_number
+        description: the account number of the bank account into which the employee's salary is paid
+        data_type: string
+      - name: personal_email_address
+        description: personal email address
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: annual_gross_salary_gbp
+        description: annual gross salary in GBP
+        data_type: float
+      - name: department
+        description: the department the employee works in
+        data_type: string
+      - name: region
+        description: the region to which the employee is assigned
+        data_type: string
+  
+  - name: fake_employee_aggregation_threshold
+    description: fake randomly generated employee data, with an aggregation threshold policy applied
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: id
+        description: employee identifier
+        data_type: string
+        constraints:
+          - type: not_null
+          - type: primary_key
+      - name: firstname
+        description: fist name
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: surname
+        description: surname
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: home_postcode
+        description: home address postcode
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: primary_phone_number
+        description: the employee's primary phone number 
+        data_type: string
+      - name: date_of_birth
+        description: date of birth
+        data_type: date
+        constraints:
+          - type: not_null
+      - name: notes
+        description: a free text field containing notes about the employee
+        data_type: string
+      - name: bank_account_number
+        description: the account number of the bank account into which the employee's salary is paid
+        data_type: string
+      - name: personal_email_address
+        description: personal email address
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: annual_gross_salary_gbp
+        description: annual gross salary in GBP
+        data_type: float
+      - name: department
+        description: the department the employee works in
+        data_type: string
+      - name: region
+        description: the region to which the employee is assigned
+        data_type: string
+
+  - name: fake_employee_masked
+    description: fake randomly generated employee data, masked with policy tags
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: id
+        description: employee identifier
+        data_type: string
+        constraints:
+          - type: not_null
+          - type: primary_key
+      - name: firstname
+        description: fist name
+        data_type: string
+        constraints:
+          - type: not_null
+        policy_tags:
+          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/6561325237916044672'
+      - name: surname
+        description: surname
+        data_type: string
+        constraints:
+          - type: not_null
+        policy_tags:
+          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/6561325237916044672'
+      - name: home_postcode
+        description: home address postcode
+        data_type: string
+        constraints:
+          - type: not_null
+        policy_tags:
+          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/1050714110010310190'
+      - name: primary_phone_number
+        description: the employee's primary phone number 
+        data_type: string
+        policy_tags:
+          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/7345421922681850963'
+      - name: date_of_birth
+        description: date of birth
+        data_type: date
+        constraints:
+          - type: not_null
+        policy_tags:
+          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/314388894887310280'
+      - name: notes
+        description: a free text field containing notes about the employee
+        data_type: string
+        policy_tags:
+          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/3411543870059956464'
+      - name: bank_account_number
+        description: the account number of the bank account into which the employee's salary is paid
+        data_type: string
+        policy_tags:
+          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/934947096368237236'
+      - name: personal_email_address
+        description: personal email address
+        data_type: string
+        constraints:
+          - type: not_null
+        policy_tags:
+          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/8962487434236224306'
+      - name: annual_gross_salary_gbp
+        description: annual gross salary in GBP
+        data_type: float
+        policy_tags:
+          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/6086625436365280309'
+      - name: department
+        description: the department in which the employee works
+        data_type: string
+      - name: region
+        description: the region to which the employee is assigned
+        data_type: string
+
+  - name: salary_by_department
+    description: a breakdown of employee salaries by their department
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: department
+        description: the department in which the employee works
+        data_type: string
+        constraints:
+          - type: not_null
+          - type: primary_key
+      - name: employee_count
+        description: number of employees in the department
+        data_type: integer
+      - name: mean_gross_annual_income
+        data_type: float64
+        description: the mean gross annual income across the department
+
+  - name: salary_by_department_differentially_private
+    description: a breakdown of employee salaries by their department, with differential privacy applied
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: department
+        description: the department in which the employee works
+        data_type: string
+        constraints:
+          - type: not_null
+          - type: primary_key
+      - name: employee_count
+        data_type: integer
+        description: number of employees in the department
+      - name: mean_gross_annual_income
+        data_type: float64
+        description: the mean gross annual income across the department
