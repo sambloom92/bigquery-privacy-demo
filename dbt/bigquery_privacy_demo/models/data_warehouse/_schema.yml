@@ -12,22 +12,27 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
           - type: primary_key
+            warn_unsupported: false
       - name: firstname
         description: fist name
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: surname
         description: surname
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: home_postcode
         description: home address postcode
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: primary_phone_number
         description: the employee's primary phone number 
         data_type: string
@@ -36,6 +41,7 @@ models:
         data_type: date
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: notes
         description: a free text field containing notes about the employee
         data_type: string
@@ -47,6 +53,7 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: annual_gross_salary_gbp
         description: annual gross salary in GBP
         data_type: float
@@ -68,22 +75,27 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
           - type: primary_key
+            warn_unsupported: false
       - name: firstname
         description: fist name
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: surname
         description: surname
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: home_postcode
         description: home address postcode
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: primary_phone_number
         description: the employee's primary phone number 
         data_type: string
@@ -92,6 +104,7 @@ models:
         data_type: date
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: notes
         description: a free text field containing notes about the employee
         data_type: string
@@ -103,6 +116,7 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
       - name: annual_gross_salary_gbp
         description: annual gross salary in GBP
         data_type: float
@@ -124,12 +138,15 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
           - type: primary_key
+            warn_unsupported: false
       - name: firstname
         description: fist name
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
         policy_tags:
           - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/6561325237916044672'
       - name: surname
@@ -137,6 +154,7 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
         policy_tags:
           - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/6561325237916044672'
       - name: home_postcode
@@ -144,6 +162,7 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
         policy_tags:
           - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/1050714110010310190'
       - name: primary_phone_number
@@ -156,6 +175,7 @@ models:
         data_type: date
         constraints:
           - type: not_null
+            warn_unsupported: false
         policy_tags:
           - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/314388894887310280'
       - name: notes
@@ -173,6 +193,7 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
         policy_tags:
           - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/8962487434236224306'
       - name: annual_gross_salary_gbp
@@ -198,7 +219,30 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
           - type: primary_key
+            warn_unsupported: false
+      - name: employee_count
+        description: number of employees in the department
+        data_type: integer
+      - name: mean_gross_annual_income
+        data_type: float64
+        description: the mean gross annual income across the department
+
+  - name: salary_by_department_with_agg_threshold
+    description: a breakdown of employee salaries by their department, with aggregation_threshold applied
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: department
+        description: the department in which the employee works
+        data_type: string
+        constraints:
+          - type: not_null
+            warn_unsupported: false
+          - type: primary_key
+            warn_unsupported: false
       - name: employee_count
         description: number of employees in the department
         data_type: integer
@@ -217,7 +261,9 @@ models:
         data_type: string
         constraints:
           - type: not_null
+            warn_unsupported: false
           - type: primary_key
+            warn_unsupported: false
       - name: employee_count
         data_type: integer
         description: number of employees in the department
