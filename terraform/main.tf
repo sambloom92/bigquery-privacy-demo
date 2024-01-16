@@ -1,8 +1,3 @@
-provider "google" {
-  project     = var.project
-  region      = "EU"
-}
-
 module "bigquery" {
     source = "./bigquery"
 
