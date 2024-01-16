@@ -4,7 +4,7 @@
     )
 }}
 SELECT
-with AGGREGATION_THRESHOLD
+with AGGREGATION_THRESHOLD -- noqa
 department
 ,count(*) as employee_count
 ,avg(annual_gross_salary_gbp) as mean_gross_annual_income

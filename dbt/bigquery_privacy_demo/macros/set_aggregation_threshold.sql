@@ -1,4 +1,7 @@
-{% macro set_aggregation_threshold(threshold_amount, privacy_unit_columns) %}
+{% macro set_aggregation_threshold(
+  threshold_amount,
+  privacy_unit_columns
+) %}
 ALTER VIEW {{ this }}
 SET OPTIONS (
   privacy_policy= """{
