@@ -1,9 +1,9 @@
 {% macro set_tablename(schema) %}
-    {{ return("`{{ schema }}.row_sequence`") }}
+    {{ schema }}.row_sequence
 {% endmacro %}
 
-{% macro drop_row_sequence() %}
-    {%- set tablename = set_tablename() %}
+{% macro drop_row_sequence(schema) %}
+    {%- set tablename = set_tablename(schema) %}
     DROP TABLE IF EXISTS {{ tablename }};
 {% endmacro %}
 
@@ -26,7 +26,7 @@
         {%- set iterations = 0 %}
     {%- endif %}
     {%- set queries %}
-        {{ drop_row_sequence() }}
+        {{ drop_row_sequence(schema) }}
         CREATE OR REPLACE TABLE {{ tablename }}
         CLUSTER BY row_num
         OPTIONS (description="used to seed randomly generated data")

@@ -1,10 +1,6 @@
 {{
     config(
-        materialized='table',
-        pre_hooks=[
-            "{{ create_udfs('data_warehouse') }}",
-            "{{ generate_row_sequence('data_warehouse') }}",
-            ]
+        materialized='table'
     )
 }}
 WITH source AS (

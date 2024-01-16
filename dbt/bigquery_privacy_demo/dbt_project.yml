@@ -18,6 +18,10 @@ clean-targets:
 vars:
   max_rows: 50
 
+on-run-start: 
+  - "{{ create_udfs('data_warehouse') }}"
+  - "{{ generate_row_sequence('data_warehouse') }}"
+
 models:
   bigquery_privacy_demo:
     data_warehouse:
