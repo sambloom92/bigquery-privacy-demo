@@ -27,9 +27,9 @@ vars:
   post_code_policy_tag: "1050714110010310190"
   salary_policy_tag: "6086625436365280309"
 
-# on-run-start:
-#   - "{{ create_udfs('data_warehouse') }}"
-#   - "{{ generate_row_sequence('data_warehouse') }}"
+on-run-start:
+  - "{{ create_udfs('data_warehouse') }}"
+  - "{{ generate_row_sequence('data_warehouse') }}"
 
 models:
   bigquery_privacy_demo:
