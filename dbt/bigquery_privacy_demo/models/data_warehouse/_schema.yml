@@ -153,7 +153,7 @@ models:
           - type: not_null
             warn_unsupported: false
         policy_tags:
-          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/6561325237916044672'
+          - "{{ var('policy_tag_path') }}{{ var('name_policy_tag') }}"
       - name: surname
         description: surname
         data_type: string
@@ -161,7 +161,7 @@ models:
           - type: not_null
             warn_unsupported: false
         policy_tags:
-          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/6561325237916044672'
+          - "{{ var('policy_tag_path') }}{{ var('name_policy_tag') }}"
       - name: home_postcode
         description: home address postcode
         data_type: string
@@ -169,12 +169,12 @@ models:
           - type: not_null
             warn_unsupported: false
         policy_tags:
-          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/1050714110010310190'
+          - "{{ var('policy_tag_path') }}{{ var('post_code_policy_tag') }}"
       - name: primary_phone_number
         description: the employee's primary phone number
         data_type: string
         policy_tags:
-          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/7345421922681850963'
+          - "{{ var('policy_tag_path') }}{{ var('phone_number_policy_tag') }}"
       - name: date_of_birth
         description: date of birth
         data_type: date
@@ -182,19 +182,19 @@ models:
           - type: not_null
             warn_unsupported: false
         policy_tags:
-          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/314388894887310280'
+          - "{{ var('policy_tag_path') }}{{ var('dob_policy_tag') }}"
       - name: notes
         description: a free text field containing notes about the employee
         data_type: string
         policy_tags:
-          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/3411543870059956464'
+          - "{{ var('policy_tag_path') }}{{ var('free_text_policy_tag') }}"
       - name: bank_account_number
         description: |
           the account number of the bank account into which the employee's
           salary is paid
         data_type: string
         policy_tags:
-          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/934947096368237236'
+          - "{{ var('policy_tag_path') }}{{ var('bank_account_number_policy_tag') }}"  # yamllint disable-line rule:line-length
       - name: personal_email_address
         description: personal email address
         data_type: string
@@ -202,12 +202,12 @@ models:
           - type: not_null
             warn_unsupported: false
         policy_tags:
-          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/8962487434236224306'
+          - "{{ var('policy_tag_path') }}{{ var('email_policy_tag') }}"
       - name: annual_gross_salary_gbp
         description: annual gross salary in GBP
         data_type: float
         policy_tags:
-          - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/6086625436365280309'
+          - "{{ var('policy_tag_path') }}{{ var('salary_policy_tag') }}"
       - name: department
         description: the department in which the employee works
         data_type: string
