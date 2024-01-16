@@ -34,7 +34,7 @@ models:
           - type: not_null
             warn_unsupported: false
       - name: primary_phone_number
-        description: the employee's primary phone number 
+        description: the employee's primary phone number
         data_type: string
       - name: date_of_birth
         description: date of birth
@@ -46,7 +46,9 @@ models:
         description: a free text field containing notes about the employee
         data_type: string
       - name: bank_account_number
-        description: the account number of the bank account into which the employee's salary is paid
+        description: |
+          the account number of the bank account into which the
+          employee's salary is paid
         data_type: string
       - name: personal_email_address
         description: personal email address
@@ -63,9 +65,10 @@ models:
       - name: region
         description: the region to which the employee is assigned
         data_type: string
-  
   - name: fake_employee_aggregation_threshold
-    description: fake randomly generated employee data, with an aggregation threshold policy applied
+    description: |
+      fake randomly generated employee data, with an aggregation
+      threshold policy applied
     config:
       contract:
         enforced: true
@@ -97,7 +100,7 @@ models:
           - type: not_null
             warn_unsupported: false
       - name: primary_phone_number
-        description: the employee's primary phone number 
+        description: the employee's primary phone number
         data_type: string
       - name: date_of_birth
         description: date of birth
@@ -109,7 +112,9 @@ models:
         description: a free text field containing notes about the employee
         data_type: string
       - name: bank_account_number
-        description: the account number of the bank account into which the employee's salary is paid
+        description: |
+          the account number of the bank account into which the
+          employee's salary is paid
         data_type: string
       - name: personal_email_address
         description: personal email address
@@ -166,7 +171,7 @@ models:
         policy_tags:
           - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/1050714110010310190'
       - name: primary_phone_number
-        description: the employee's primary phone number 
+        description: the employee's primary phone number
         data_type: string
         policy_tags:
           - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/7345421922681850963'
@@ -184,7 +189,9 @@ models:
         policy_tags:
           - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/3411543870059956464'
       - name: bank_account_number
-        description: the account number of the bank account into which the employee's salary is paid
+        description: |
+          the account number of the bank account into which the employee's
+          salary is paid
         data_type: string
         policy_tags:
           - 'projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/934947096368237236'
@@ -230,7 +237,9 @@ models:
         description: the mean gross annual income across the department
 
   - name: salary_by_department_with_agg_threshold
-    description: a breakdown of employee salaries by their department, with aggregation_threshold applied
+    description: |
+      a breakdown of employee salaries by their department, with
+      aggregation_threshold applied
     config:
       contract:
         enforced: true
@@ -251,7 +260,9 @@ models:
         description: the mean gross annual income across the department
 
   - name: salary_by_department_differentially_private
-    description: a breakdown of employee salaries by their department, with differential privacy applied
+    description: |
+      a breakdown of employee salaries by their department, with
+      differential privacy applied
     config:
       contract:
         enforced: true

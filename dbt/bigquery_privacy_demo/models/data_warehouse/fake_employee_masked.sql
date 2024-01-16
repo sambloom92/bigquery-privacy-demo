@@ -4,6 +4,5 @@
         post_hook='{{ create_row_level_policies() }}'
     )
 }}
-SELECT
-*
+SELECT *
 FROM {{ ref('fake_employee') }}

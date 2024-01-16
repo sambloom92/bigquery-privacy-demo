@@ -7,7 +7,9 @@ sources:
         description: used to seed randomly generated data
         columns:
           - name: row_num
-            description: a unique row number used to seed randomly generated data
+            description: |
+              a unique row number used to seed randomly
+              generated data
             tests:
               - not_null
               - unique
