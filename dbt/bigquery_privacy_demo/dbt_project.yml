@@ -18,7 +18,7 @@ clean-targets:
 vars:
   max_rows: 50
 
-on-run-start: 
+on-run-start:
   - "{{ create_udfs('data_warehouse') }}"
   - "{{ generate_row_sequence('data_warehouse') }}"
 
@@ -27,5 +27,5 @@ models:
     data_warehouse:
       materialized: table
       +persist_docs:
-          columns: true
-          relation: true
+        columns: true
+        relation: true
