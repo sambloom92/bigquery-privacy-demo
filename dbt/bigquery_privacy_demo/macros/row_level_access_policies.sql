@@ -2,7 +2,8 @@
 CREATE OR REPLACE ROW ACCESS POLICY region_filter_uk
 ON {{ this }}
 GRANT TO ('user:demo-user@sambloom.me')
-FILTER USING (region = 'UK');
+FILTER USING (region = 'UK')
+;
 
 CREATE OR REPLACE ROW ACCESS POLICY region_filter_all
 ON {{ this }}
