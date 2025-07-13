@@ -1,19 +1,19 @@
 variable "project" {
   description = "project ID"
-  type = string
+  type        = string
 }
 
 variable "admin_email" {
   description = "admin email address"
-  type = string
+  type        = string
 }
 
 variable "demo_user_email" {
   description = "demo user email address"
-  type = string
+  type        = string
 }
 
 variable "region" {
   description = "default GCP region"
-  type = string
+  type        = string
 }

@@ -1,8 +1,15 @@
 [sqlfluff]
-templater = jinja
+templater = dbt
 sql_file_exts = .sql
 large_file_skip_byte_limit = 50000
 max_line_length = 80
+
+[sqlfluff:templater:dbt]
+project_dir = ./dbt/bigquery_privacy_demo
+profiles_dir = ./dbt/bigquery_privacy_demo
+profile = bigquery_privacy_demo
+target = dev
+dbt_skip_compilation_error = False
 
 [sqlfluff:indentation]
 indented_joins = False

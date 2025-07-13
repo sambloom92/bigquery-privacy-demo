@@ -17,18 +17,17 @@ clean-targets:
 
 vars:
   max_rows: 50
-  policy_tag_path: "projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/5829721592837763935/policyTags/"  # yamllint disable-line rule:line-length
-  bank_account_number_policy_tag: "934947096368237236"
-  dob_policy_tag: "314388894887310280"
-  email_policy_tag: "8962487434236224306"
-  free_text_policy_tag: "3411543870059956464"
-  name_policy_tag: "6561325237916044672"
-  phone_number_policy_tag: "7345421922681850963"
-  post_code_policy_tag: "1050714110010310190"
-  salary_policy_tag: "6086625436365280309"
+  policy_tag_path: "projects/bigquery-privacy-demo/locations/europe-west2/taxonomies/3051515431972821694/policyTags/"  # yamllint disable-line rule:line-length
+  bank_account_number_policy_tag: "4203843241979409841"
+  dob_policy_tag: "5855148680878219069"
+  email_policy_tag: "734617328132131678"
+  free_text_policy_tag: "9130431369601315567"
+  name_policy_tag: "2645123393881147413"
+  phone_number_policy_tag: "681836166790352694"
+  post_code_policy_tag: "3548318927837217600"
+  salary_policy_tag: "7205731708012414017"
 
 on-run-start:
-  - "{{ create_udfs('data_warehouse') }}"
   - "{{ generate_row_sequence('data_warehouse') }}"
 
 models:
