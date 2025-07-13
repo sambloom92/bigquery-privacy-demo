@@ -3,7 +3,7 @@ This terraform project provisions a BigQuery dataset, data policy tags and IAM b
 
 ## Instructions
 
-1. [Install terraform](https://developer.hashicorp.com/terraform/install)  version `1.6.6` (I recommend [tfenv](https://github.com/tfutils/tfenv?tab=readme-ov-file) for managing multiple terraform versions).
+1. [Install terraform](https://developer.hashicorp.com/terraform/install)  (version specified in .terraform-version file). I recommend [tfenv](https://github.com/tfutils/tfenv?tab=readme-ov-file) for managing multiple terraform versions.
 
 2. Run the following command in this directory:
 
@@ -19,11 +19,11 @@ Fill in the following fields with values:
     ```
 4. Run the following command to review the planned changes:
     ```
-    terraform plan -var-file=terraform.tfvars
+    terraform plan
     ```
 5. Run the following command to apply changes:
     ```
-    terraform apply -var-file=terraform.tfvars
+    terraform apply
     ```
 
 ### Outputs
