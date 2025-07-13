@@ -139,16 +139,6 @@ resource "google_bigquery_datapolicy_data_policy" "salary_mask" {
     }
 }
 
-resource "google_bigquery_datapolicy_data_policy" "free_text_mask" {
-    location         = var.region
-    data_policy_id   = "free_text_mask"
-    policy_tag       = google_data_catalog_policy_tag.free_text.id
-    data_policy_type = "DATA_MASKING_POLICY"
-    data_masking_policy {
-      predefined_expression = "ALWAYS_NULL"
-    }
-}
-
 resource "google_bigquery_datapolicy_data_policy" "date_of_birth_mask" {
     location         = var.region
     data_policy_id   = "date_of_birth_mask"
@@ -176,7 +166,6 @@ locals {
         "post_code_mask": google_bigquery_datapolicy_data_policy.post_code_mask,
         "email_mask": google_bigquery_datapolicy_data_policy.email_mask,
         "phone_number_last_4_char_mask": google_bigquery_datapolicy_data_policy.phone_number_last_4_char_mask,
-        "free_text_mask": google_bigquery_datapolicy_data_policy.free_text_mask,
         "salary_mask": google_bigquery_datapolicy_data_policy.salary_mask,
         "account_number_mask": google_bigquery_datapolicy_data_policy.account_number_mask
 }

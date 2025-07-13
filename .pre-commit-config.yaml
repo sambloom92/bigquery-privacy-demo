@@ -1,13 +1,12 @@
 repos:
   - repo: https://github.com/sqlfluff/sqlfluff
-    rev: 2.3.5
+    rev: 3.4.2
     hooks:
-      - id: sqlfluff-lint
-        args: ["dbt/bigquery_privacy_demo/.", "--dialect", "bigquery"]
       - id: sqlfluff-fix
         args: ["dbt/bigquery_privacy_demo/.", "--dialect", "bigquery"]
+        additional_dependencies: ['dbt-bigquery', 'sqlfluff-templater-dbt']
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.33.0
+    rev: v1.37.1
     hooks:
       - id: yamllint
-        args: [--strict, -c=dbt/bigquery_privacy_demo/.yamllint]
+        args: [--strict, -c=.yamllint]
